@@ -1,10 +1,10 @@
-server:
-  port: 8888
-
 #  Étape suivante: tester ton config-server
 #  http://localhost:8888/ms-compte/default
 #  http://localhost:8888/ms-banque/default
 #  http://localhost:8888/application/default
+
+server:
+  port: 8888
 
 spring:
   application:
@@ -15,4 +15,10 @@ spring:
         git:
           uri: https://github.com/AbdelhafidhGHARBI/Config_Repo_MSCompte_MSBanque.git
           clone-on-start: true
-          default-label: main  # ou master selon ta branche
+          default-label: main
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health"
